@@ -2,7 +2,8 @@
 
 use strict;
 
-use v5.26; # to use `say`
+use v5.26; # to use `say`, or
+# use 5.26.1; # to use `say`
 
 use Test;
 use Util;
