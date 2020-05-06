@@ -10,7 +10,7 @@ use Util;
 
 use Data::Dumper;
 
-my $test = Test->new();
+my $test = Test->new(arg1 => "value1", arg2 => "value2");
 #my $test = new Test();
 say;
 say "***** class Test... *****";

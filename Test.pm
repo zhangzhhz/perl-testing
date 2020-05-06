@@ -3,13 +3,14 @@ package Test;
 use v5.26;
 
 use Carp;
+use Data::Dumper;
 use Exporter 'import';
 
 our @EXPORTER = qw($hello);
 our $hello = "HELLO FROM Test global";
 
 sub new{
-    say(__PACKAGE__ . ": new: [@_]");
+    say(__PACKAGE__ . ": new: [" . Dumper(\@_) . "]");
     my $class = shift;
     my $self = {
         attrib1 => "My attrib1",
