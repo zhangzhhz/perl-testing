@@ -32,8 +32,11 @@ sub getGlobalHello{
 sub AUTOLOAD {
    my $self = shift;
    my $type = ref ($self) || croak "$self is not an object";
-   carp __PACKAGE__, ": AUTOLOAD";
-   say __PACKAGE__, ": AUTOLOAD caled";
+   our $AUTOLOAD;
+   my $called = $AUTOLOAD =~ s/.*:://r;
+   carp "No such attribute: $called" unless $self->{$called};
+   #croak "No such attribute: $called" unless $self->{$called};
+   return $self->{$called};
 }
 
 sub DESTROY {
