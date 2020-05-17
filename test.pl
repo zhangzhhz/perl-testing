@@ -1,5 +1,7 @@
 #!/usr/bin/perl
 
+# perl -I . testFile.pl
+
 use strict;
 
 use v5.26; # to use `say`, or
